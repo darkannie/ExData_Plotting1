@@ -9,10 +9,8 @@ Power_Sub_Time <- strptime(Power_Sub$Time, format = "%H:%M:%S")
 Power_Sub_DayA <- format(Power_Sub_Time[1:1440], "01-Feb-2007 %H:%M:%S")
 Power_Sub_DayB <- format(Power_Sub_Time[1441:2880], "02-Feb-2007 %H:%M:%S")
 
-##plot the line graph using basic plotting functions
+##plot the line graph using basic plotting functions and save as a PNG file
+png("plot2.png", width=480, height=480)
 plot(Power_Sub_Time,as.numeric(as.character(Power_Sub$Global_active_power)),type="l",xlab="",ylab="Global Active Power (kilowatts)")
 title(main = "Global Active Power vs Time")
-
-##Save the histogram as a PNG file
-png(filename = "plot2.png", width = 480, height = 480, units = "px")
 dev.off()

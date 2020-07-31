@@ -4,9 +4,6 @@ names(power) <- c("Date","Time","Global_active_power","Global_reactive_power","V
 Power_Sub <- subset(power,power$Date=="1/2/2007" | power$Date =="2/2/2007")
 
 ##plot a histogram titled "Global Active Power Kilowatts" and save as a PNG file
+png("plot1.png", width=480, height=480)
 hist(as.numeric(as.character(Power_Sub$Global_active_power)),col="red",main="Global Active Power",xlab="Global Active Power(kilowatts)")
-
-##Save the histogram as a PNG file
-png("plot1.png", width = 480, height = 480, units = "px")
-
 dev.off()
